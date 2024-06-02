@@ -9,27 +9,29 @@ const getData = () => {
 
     const stringData = data.split("\n");
 
-    const numbersSpelledOut = [
-      "one",
-      "two",
-      "three",
-      "four",
-      "five",
-      "six",
-      "seven",
-      "eight",
-      "nine",
-    ];
+    const numbersSpelledOut = {
+      1: "one",
+      2: "two",
+      3: "three",
+      4: "four",
+      5: "five",
+      6: "six",
+      7: "seven",
+      8: "eight",
+      9: "nine",
+    };
 
     const regex = /\d/g;
     const lineNumbers: string[] = [];
     for (let line of stringData) {
-      lineNumbers.push(line.match(regex)!.join(""));
+      const newLine = line.replaceAll("nine", "9");
+
+      lineNumbers.push(newLine.match(regex)!.join(""));
     }
+    console.log(lineNumbers);
 
     let twoNumbersTogether = "";
     let pairStringNumbersArr: string[] = [];
-
     for (let numberLine of lineNumbers) {
       if (numberLine.length === 1) {
         twoNumbersTogether = numberLine + numberLine;
