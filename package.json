@@ -1,9 +1,9 @@
 {
-  "name": "day-1",
+  "name": "Advent-of-code",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npx ts-node day1/index.ts",
+    "start": "npx ts-node day1/part2.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
