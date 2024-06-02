@@ -9,6 +9,18 @@ const getData = () => {
 
     const stringData = data.split("\n");
 
+    const numbersSpelledOut = [
+      "one",
+      "two",
+      "three",
+      "four",
+      "five",
+      "six",
+      "seven",
+      "eight",
+      "nine",
+    ];
+
     const regex = /\d/g;
     const lineNumbers: string[] = [];
     for (let line of stringData) {
