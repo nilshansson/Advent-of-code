@@ -20,11 +20,24 @@ const getData = () => {
       8: "eight",
       9: "nine",
     };
+    const replaceLettersToNumbers = (line: string): string => {
+      const replaceOne = line.replaceAll("one", "1");
+      const replaceTwo = replaceOne.replaceAll("two", "2");
+      const replaceThree = replaceTwo.replaceAll("three", "3");
+      const replaceFour = replaceThree.replaceAll("four", "4");
+      const replaceFive = replaceFour.replaceAll("five", "5");
+      const replaceSix = replaceFive.replaceAll("six", "6");
+      const replaceSeven = replaceSix.replaceAll("seven", "7");
+      const replaceEigth = replaceSeven.replaceAll("eight", "8");
+      const replaceNine = replaceEigth.replaceAll("nine", "9");
+
+      return replaceNine;
+    };
 
     const regex = /\d/g;
     const lineNumbers: string[] = [];
     for (let line of stringData) {
-      const newLine = line.replaceAll("nine", "9");
+      const newLine: string = replaceLettersToNumbers(line);
 
       lineNumbers.push(newLine.match(regex)!.join(""));
     }
