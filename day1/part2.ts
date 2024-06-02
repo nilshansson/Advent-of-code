@@ -21,7 +21,16 @@ const getData = () => {
       9: "nine",
     };
     const replaceLettersToNumbers = (line: string): string => {
-      const replaceOne = line.replaceAll("one", "1");
+      const replaceTwone = line.replaceAll("twone", "21");
+      const replaceThreeight = replaceTwone.replaceAll("threeight", "38");
+      const replacefiveight = replaceThreeight.replaceAll("fiveight", "58");
+      const replacenineight = replacefiveight.replaceAll("nineight", "98");
+      const replaceoneight = replacenineight.replaceAll("oneight", "18");
+      const replacesevenine = replaceoneight.replaceAll("sevenine", "79");
+      const replaceeightwo = replacesevenine.replaceAll("eightwo", "82");
+      const replaceeighthree = replaceeightwo.replaceAll("eighthree", "83");
+
+      const replaceOne = replaceeighthree.replaceAll("one", "1");
       const replaceTwo = replaceOne.replaceAll("two", "2");
       const replaceThree = replaceTwo.replaceAll("three", "3");
       const replaceFour = replaceThree.replaceAll("four", "4");
@@ -41,7 +50,6 @@ const getData = () => {
 
       lineNumbers.push(newLine.match(regex)!.join(""));
     }
-    console.log(lineNumbers);
 
     let twoNumbersTogether = "";
     let pairStringNumbersArr: string[] = [];
@@ -54,9 +62,11 @@ const getData = () => {
       pairStringNumbersArr.push(twoNumbersTogether);
     }
     let pairNumbersArr: number[] = [];
+
     for (const pair of pairStringNumbersArr) {
       pairNumbersArr.push(parseFloat(pair));
     }
+    console.log(pairNumbersArr);
 
     console.log(
       pairNumbersArr.reduce((sum, currentValue) => sum + currentValue)
